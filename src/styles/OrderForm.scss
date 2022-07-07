@@ -1,0 +1,35 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
+
+// font variables
+$roboto-slab: 'Roboto Slab', serif;   
+$open-sans: 'Open Sans', sans-serif;
+$widthsize:(72px);
+$heightsize:(30px);
+
+table{
+    width: 60%;
+    height: 400px;
+    background-color: aqua;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: larger;
+    font-family: $roboto-slab;
+}
+
+table, th, td {
+    border: 1px solid black;
+  }
+
+button{
+  
+    height: $heightsize;
+    width: $widthsize;
+    transition-duration: 0.4s;
+}
+button:hover{
+    background-color: silver;
+    border: none;
+    cursor: pointer;
+}
+

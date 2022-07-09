@@ -1,10 +1,10 @@
 import React from 'react'
-import '../../styles/OrderForm.css'
+import '../../styles/OrderFormStyle/OrderForm.css'
 
 export default function OrderForm() {
   return (
     <div>
-<table>
+<table className='table'>
   <thead>
     <tr>
       <th>Sıra Nömrəsi</th>

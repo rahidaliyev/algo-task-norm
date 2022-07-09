@@ -6,7 +6,7 @@ $open-sans: 'Open Sans', sans-serif;
 $widthsize:(72px);
 $heightsize:(30px);
 
-table{
+.table{
     width: 60%;
     height: 400px;
     background-color: aqua;
@@ -17,7 +17,7 @@ table{
     font-family: $roboto-slab;
 }
 
-table, th, td {
+.table, th, td {
     border: 1px solid black;
   }
 

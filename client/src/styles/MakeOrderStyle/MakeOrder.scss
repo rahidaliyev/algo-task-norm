@@ -18,7 +18,10 @@ font-size: 25px;
     height: 390px;
     width: 550px;
     border: 1px solid black;
+    padding: 20px;
+    margin:50px;
 }
+   
 
 .amount{
     height: 40px;
@@ -46,4 +49,8 @@ margin: 35px 0 0 80px;
 .price>input{
     height: 30px;
     width: 30px;  
+}
+
+button{
+ margin-top: 30px;
 }

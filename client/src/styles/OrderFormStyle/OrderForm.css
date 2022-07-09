@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
-table {
+.table {
   width: 60%;
   height: 400px;
   background-color: aqua;
@@ -10,7 +10,7 @@ table {
   font-family: "Roboto Slab", serif;
 }
 
-table, th, td {
+.table, th, td {
   border: 1px solid black;
 }
 

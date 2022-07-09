@@ -2,12 +2,12 @@
 .table {
   width: 60%;
   height: 400px;
-  background-color: aqua;
   text-align: center;
   border: 1px solid black;
   border-radius: 10px;
   font-size: larger;
   font-family: "Roboto Slab", serif;
+  margin-left: 20%;
 }
 
 .table, th, td {

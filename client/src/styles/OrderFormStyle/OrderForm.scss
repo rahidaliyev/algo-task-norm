@@ -9,12 +9,13 @@ $heightsize:(30px);
 .table{
     width: 60%;
     height: 400px;
-    background-color: aqua;
+  
     text-align: center;
     border: 1px solid black;
     border-radius: 10px;
     font-size: larger;
     font-family: $roboto-slab;
+    margin-left: 20%;
 }
 
 .table, th, td {

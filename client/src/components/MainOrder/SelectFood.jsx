@@ -1,13 +1,17 @@
 import React, { useState,useEffect } from 'react'
 import axios from 'axios'
 import '../../styles//MakeOrderStyle/MakeOrder.css'
+import store from '../../redux/store'
 
-export default function SelectFood() {
+export default function SelectFood(props) {
+  const addtoOrder=()=>{
+    store.dispatch({type:"ADD_TO_CARD",payload:{post: props}})
+    }
   const [posts,setPosts]=useState([])
-
+  
 
   useEffect(()=>{
-       axios.get('http://localhost:5000/api')
+       axios.get('data.json')
       .then(res=>{
           console.log(res)
          setPosts(res.data)
@@ -26,6 +30,7 @@ export default function SelectFood() {
 
 <label >Məhsul adı</label>
 <select className='firstselect'>
+
 {posts.map(post=><option key={post.id}>{post.name}</option>)}
 
 </select>
@@ -34,15 +39,15 @@ export default function SelectFood() {
 <div className='lasttwo'>
 <div className='secondcontainer'>
 <label>Miqdar</label>
-<input className='amount'/>
+<input  className='amount'/>
 </div>
 <div className='price'>
-<babel>Qiyməti</babel>
-<input/>
+<label>Qiyməti</label>
+<input value={props} />
 </div>
 </div>
 
-<button>Əlavə et</button>
+<button onClick={addtoOrder}>Əlavə et</button>
     </div>
   )
 }

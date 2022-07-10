@@ -1,8 +1,11 @@
 
+
 const initialState={
   admin: [], 
   orders: []
+
 }
+
 function reducer(state=initialState,action){
   switch(action.type){
       case 'ADD_TO_CARD':

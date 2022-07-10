@@ -10,7 +10,7 @@ export default function SelectFood(props) {
   const [posts,setPosts]=useState([])
   
 
-  useEffect(()=>{
+useEffect(()=>{
        axios.get('data.json')
       .then(res=>{
           console.log(res)
@@ -20,7 +20,7 @@ export default function SelectFood(props) {
           console.log(err)
       })
   },[])
- 
+
 
   return (
     <div className='container'>

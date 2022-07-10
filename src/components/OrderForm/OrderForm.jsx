@@ -4,7 +4,7 @@ import '../../styles/OrderFormStyle/OrderForm.css'
 export default function OrderForm() {
   return (
     <div>
-<table className='table'>
+<table className="table-latitude">
   <thead>
     <tr>
       <th>Sıra Nömrəsi</th>

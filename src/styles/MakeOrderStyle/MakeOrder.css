@@ -79,4 +79,8 @@ button {
 #back {
   background-color: red;
 }
+
+button:hover {
+  cursor: pointer;
+}
 /*# sourceMappingURL=MakeOrder.css.map */

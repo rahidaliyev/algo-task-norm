@@ -5,6 +5,7 @@ import { Link, Route,Routes } from "react-router-dom";
 import MakeOrderList from "./components/MakeOrderList/MakeOrderList";
 import {ImExit} from 'react-icons/im'
 
+
 function App() {
 
   return (
@@ -16,8 +17,6 @@ function App() {
    
       <Route path="/selectfood" element={<>
    <Link style={{marginLeft:'-60px',marginTop:"-70px"}} to="/"> <ImExit  size={30} /></Link> 
-
-     
         <SelectFood/>
         <MakeOrderList/></>}/>
      

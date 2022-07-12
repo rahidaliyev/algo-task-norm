@@ -1,6 +1,16 @@
 import React from 'react'
+import store from '../../redux/store'
+import { useEffect,useState } from 'react'
 
-export default function MakeOrderList() {
+
+export default function MakeOrderList(props) {
+
+  const [orders,setOrders]=useState([])
+  useEffect(()=>{
+      const orders=store.getState()
+      setOrders(orders.admin)
+  },[])
+  console.log(orders)
   return (
     <div style={{border:"1px solid black"}}>
 <table>
@@ -18,29 +28,13 @@ export default function MakeOrderList() {
     </thead>
 
     <tbody>
-    <tr>
-    <td>1</td>
-    <td>Çörəkdə Dönər</td>
-    <td>3</td>
-    <td>9.6AZN</td>
-    <td>15.59</td>
-    <td>0 dəq</td>
-    <td><button>verildi</button></td>
-    <td><button id='back'>geri al</button></td>
- </tr>
+
+    {    orders.map((el)=>{return <table {...el}/>})}
+
+
  <tr>
     <td>1</td>
-    <td>Çörəkdə Dönər</td>
-    <td>3</td>
-    <td>9.6AZN</td>
-    <td>15.59</td>
-    <td>0 dəq</td>
-    <td><button>verildi</button></td>
-    <td><button id='back'>geri al</button></td>
- </tr>
- <tr>
-    <td>1</td>
-    <td>Çörəkdə Dönər</td>
+    <td>{orders.name}</td>
     <td>3</td>
     <td>9.6AZN</td>
     <td>15.59</td>

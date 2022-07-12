@@ -1,17 +1,28 @@
 import React, { useState,useEffect } from 'react'
-import axios from 'axios'
-import '../../styles//MakeOrderStyle/MakeOrder.css'
 import store from '../../redux/store'
 
+import axios from 'axios'
+import '../../styles//MakeOrderStyle/MakeOrder.css'
+
+
+
+
+
 export default function SelectFood(props) {
+
+  const calculatePrice=()=>{
+
+  }
+
   const addtoOrder=()=>{
     store.dispatch({type:"ADD_TO_CARD",payload:{post: props}})
     }
-  const [posts,setPosts]=useState([])
   
-
+  
+  
+    const [posts,setPosts]=useState([])
 useEffect(()=>{
-       axios.get('data.json')
+     axios.get('data.json')
       .then(res=>{
           console.log(res)
          setPosts(res.data)
@@ -19,7 +30,19 @@ useEffect(()=>{
       .catch(err=>{
           console.log(err)
       })
+ 
+
   },[])
+
+  const [orders,setOrders]=useState([])
+console.log(orders)
+useEffect(()=>
+{
+  const post=store.getState()
+  setOrders(post.orders)
+  
+},[])
+
 
 
   return (
@@ -39,11 +62,11 @@ useEffect(()=>{
 <div className='lasttwo'>
 <div className='secondcontainer'>
 <label>Miqdar</label>
-<input  className='amount'/>
+<input onChange={calculatePrice} className='amount'/>
 </div>
 <div className='price'>
 <label>Qiyməti</label>
-<input value={props} />
+<input  />
 </div>
 </div>
 

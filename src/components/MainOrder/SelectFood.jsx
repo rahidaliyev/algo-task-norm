@@ -1,6 +1,5 @@
 import React, { useState,useEffect } from 'react'
 import store from '../../redux/store'
-
 import axios from 'axios'
 import '../../styles//MakeOrderStyle/MakeOrder.css'
 
@@ -16,12 +15,13 @@ export default function SelectFood(props) {
 
   const addtoOrder=()=>{
     store.dispatch({type:"ADD_TO_CARD",payload:{post: props}})
+    console.log(orders)
     }
   
   
   
     const [posts,setPosts]=useState([])
-useEffect(()=>{
+ useEffect(()=>{
      axios.get('data.json')
       .then(res=>{
           console.log(res)
@@ -31,11 +31,10 @@ useEffect(()=>{
           console.log(err)
       })
  
-
   },[])
 
   const [orders,setOrders]=useState([])
-console.log(orders)
+
 useEffect(()=>
 {
   const post=store.getState()

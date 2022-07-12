@@ -3,14 +3,14 @@ import store from '../../redux/store'
 import { useEffect,useState } from 'react'
 
 
-export default function MakeOrderList(props) {
+export default function MakeOrderList() {
 
   const [orders,setOrders]=useState([])
   useEffect(()=>{
       const orders=store.getState()
       setOrders(orders.admin)
   },[])
-  console.log(orders)
+  // console.log(orders)
   return (
     <div style={{border:"1px solid black"}}>
 <table>
@@ -29,7 +29,7 @@ export default function MakeOrderList(props) {
 
     <tbody>
 
-    {    orders.map((el)=>{return <table {...el}/>})}
+    {   orders.map((el)=>{return <tr {...el}/>})}
 
 
  <tr>

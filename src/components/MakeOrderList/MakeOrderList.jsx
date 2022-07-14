@@ -5,12 +5,14 @@ import { useEffect,useState } from 'react'
 
 export default function MakeOrderList() {
 
+
   const [orders,setOrders]=useState([])
   useEffect(()=>{
-      const orders=store.getState()
-      setOrders(orders.admin)
+      // const orders=store.getState()
+      setOrders(store.getState().admin)
+      console.log(store.getState().admin)
   },[])
-  // console.log(orders)
+  console.log(orders)
   return (
     <div style={{border:"1px solid black"}}>
 <table>
@@ -29,12 +31,12 @@ export default function MakeOrderList() {
 
     <tbody>
 
-    {   orders.map((el)=>{return <tr {...el}/>})}
+    {  orders.filter((el)=>{return <tr {...el}/>})}
 
 
  <tr>
     <td>1</td>
-    <td>{orders.name}</td>
+    <td>Corek</td>
     <td>3</td>
     <td>9.6AZN</td>
     <td>15.59</td>

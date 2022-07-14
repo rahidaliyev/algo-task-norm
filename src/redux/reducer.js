@@ -89,29 +89,37 @@ import axios from "axios"
 
 
 
-const initialState = {
+let initialState = {
   admin: [],
   orders: []
 
 }
 function reducer(state = initialState, action) {
-axios.get('data.json')
+  function dataAdder(data){
+          state.orders.push(data)
+          
+  }
+
+
+let mydata=axios.get('data.json')
        .then(res=>{
+    dataAdder(res)
            console.log(res)
-           let pusheddata=state.orders.push(res)
-           console.log(pusheddata)
        })
        .catch(err=>{
            console.log(err)
           
        })
-     
-   
- 
+
+ console.log(state.orders.push(mydata))
+
   switch (action.type) {
     case 'ADD_TO_CARD':
-      const orders = [...state.admin, action.payload.post]
-      return { ...state, orders}
+      console.log(state.orders[1].data[0])
+     
+      console.log(state.admin)
+      const admin = [...state.admin, action.payload.post]
+      return { ...state, admin}
 
 
 
